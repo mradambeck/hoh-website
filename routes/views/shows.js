@@ -9,8 +9,7 @@ exports = module.exports = function (req, res) {
 	locals.section = 'shows';
 
 	// Load the shows by sortOrder
-	view.query('shows', keystone.list('Show').model.find().sort('eventDate'));
-
+	view.query('shows', keystone.list('Show').model.find().where('state', 'published').sort('eventDate'));
 	// Render the view
 	view.render('shows');
 
