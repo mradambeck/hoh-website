@@ -1,0 +1,27 @@
+<div class="container">
+	<h1>Shows</h1>
+</div>
+<div class="container">
+	<!-- if galleries -->
+	{{#if shows}}
+
+		{{#each shows}}
+    <hr />
+		<div class="row">
+				<div class="col-xs-4">
+          {{eventDate}}
+				</div>
+        <div class="col-xs-4">
+          {{title}}
+        </div>
+        <div class="col-xs-4">
+          {{venue}} - {{location}}
+        </div>
+		</div>
+		{{/each}}
+	{{else}}
+	<!-- else -->
+	<h3 class="text-muted">There are no shows currently announced.</h3>
+
+	{{/if}}
+</div>
