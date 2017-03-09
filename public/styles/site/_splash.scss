@@ -1,0 +1,22 @@
+.module-splash {
+  background-color: $bg-white;
+
+  background-image: url('../images/ep-art@2x.jpg');
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+
+}
+
+.module-splash--container {
+  height: 100vh;
+}
+
+.module-splash--title {
+  margin-top: 80vh;
+  height: auto;
+  width: 80%;
+  max-width: 60rem;
+}
