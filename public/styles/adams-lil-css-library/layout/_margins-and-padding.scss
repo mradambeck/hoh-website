@@ -1,0 +1,22 @@
+// Margins and padding //
+
+@mixin spacing($type, $direction, $initial) {
+  .#{$type}-#{$initial}-0  { #{$type}-#{$direction}: 0;     }
+  .#{$type}-#{$initial}-6  { #{$type}-#{$direction}: .6em;  }
+  .#{$type}-#{$initial}-12 { #{$type}-#{$direction}: 1.2em; }
+  .#{$type}-#{$initial}-18 { #{$type}-#{$direction}: 1.8em; }
+  .#{$type}-#{$initial}-36 { #{$type}-#{$direction}: 3.6em; }
+  .#{$type}-#{$initial}-54 { #{$type}-#{$direction}: 5.4em; }
+  .#{$type}-#{$initial}-72 { #{$type}-#{$direction}: 7.2em; }
+}
+
+// Margins:
+@include spacing(margin, left, l);
+@include spacing(margin, right, r);
+@include spacing(margin, top, t);
+@include spacing(margin, bottom, b);
+// Padding:
+@include spacing(padding, left, l);
+@include spacing(padding, right, r);
+@include spacing(padding, top, t);
+@include spacing(padding, bottom, b);

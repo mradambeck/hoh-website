@@ -31,7 +31,7 @@ keystone.init({
 	'auto update': true,
 	'session': true,
 	'auth': true,
-	'user model': 'User',
+	'user model': 'User'
 });
 
 // Load your project's Models
@@ -49,6 +49,7 @@ keystone.set('locals', {
 
 // Load your project's Routes
 keystone.set('routes', require('./routes'));
+keystone.set('cookie secret', process.env.COOKIE_SECRET);
 
 // Switch Keystone Email defaults to handlebars
 keystone.Email.defaults.templateExt = 'hbs';
@@ -61,6 +62,8 @@ keystone.set('nav', {
 	galleries: 'galleries',
 	enquiries: 'enquiries',
 	users: 'users',
+  shows: 'shows',
+  discography: 'albums'
 });
 
 // Start Keystone to connect to your database and initialise the web server

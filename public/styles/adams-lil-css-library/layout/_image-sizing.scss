@@ -1,0 +1,12 @@
+// Image sizing //
+
+// Responsive images:
+.img-fluid {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+// Sets bg image sizing:
+.bg-cover    { background-size: cover; }
+.bg-contain  { background-size: contain; }
