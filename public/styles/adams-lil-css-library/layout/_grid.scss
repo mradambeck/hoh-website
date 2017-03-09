@@ -1,0 +1,209 @@
+// Grid System //
+
+.wrapper {
+	overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  min-width: 32rem;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2em;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.container-fluid {
+  @extend .container;
+  padding: 0;
+}
+
+// Try not to use hacky clear fixes
+.container::after,
+.row,
+.clear-fix {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+// Columns Wrapper
+.row {
+
+  // display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  // display: -moz-box;
+  // display: -ms-flexbox;  /* TWEENER - IE 10 */
+  // display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  -ms-align-content: flex-start;
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+}
+
+// Grid
+
+// May want to manually add this to each col option if we think we may reuse .col naming convention
+[class^='HC-col-'] {
+  float: left;
+}
+
+@mixin grid($num) {
+
+  // Grid widths
+  .col-one-#{$num}      { width: 8.3333333%; }
+  .col-two-#{$num}      { width: 16.666667%; }
+  .col-three-#{$num}    { width: 25%;        }
+  .col-four-#{$num}     { width: 33.3333336%;}
+  .col-five-#{$num}     { width: 41.666667%; }
+  .col-six-#{$num}      { width: 50%;        }
+  .col-seven-#{$num}    { width: 58.333333%; }
+  .col-eight-#{$num}    { width: 66.666667%; }
+  .col-nine-#{$num}     { width: 75%;        }
+  .col-ten-#{$num}      { width: 83.333333%; }
+  .col-eleven-#{$num}   { width: 91.666667%; }
+  .col-twelve-#{$num}   { width: 100%; margin-left: 0; }
+
+  // Grid Offsets
+  .col-offset-zero-#{$num}     { margin-left: 0;          } // Allows you to clear offsets for sizes above previous offsets
+  .col-offset-one-#{$num}      { margin-left: 8.3333333%; }
+  .col-offset-two-#{$num}      { margin-left: 16.666667%; }
+  .col-offset-three-#{$num}    { margin-left: 25%;        }
+  .col-offset-four-#{$num}     { margin-left: 33.3333336%;}
+  .col-offset-five-#{$num}     { margin-left: 41.666667%; }
+  .col-offset-six-#{$num}      { margin-left: 50%;        }
+  .col-offset-seven-#{$num}    { margin-left: 58.333333%; }
+  .col-offset-eight-#{$num}    { margin-left: 66.666667%; }
+  .col-offset-nine-#{$num}     { margin-left: 75%;        }
+  .col-offset-ten-#{$num}      { margin-left: 83.333333%; }
+  .col-offset-eleven-#{$num}   { margin-left: 91.666667%; }
+}
+
+
+// Default, 0px and above:
+.col-one      { width: 8.3333333%; }
+.col-two      { width: 16.666667%; }
+.col-three    { width: 25%;        }
+.col-four     { width: 33.3333336%;}
+.col-five     { width: 41.666667%; }
+.col-six      { width: 50%;        }
+.col-seven    { width: 58.333333%; }
+.col-eight    { width: 66.666667%; }
+.col-nine     { width: 75%;        }
+.col-ten      { width: 83.333333%; }
+.col-eleven   { width: 91.666667%; }
+.col-twelve   { width: 100%; margin-left: 0; }
+
+.col-offset-zero     { margin-left: 0;          }
+.col-offset-one      { margin-left: 8.3333333%; }
+.col-offset-two      { margin-left: 16.666667%; }
+.col-offset-three    { margin-left: 25%;        }
+.col-offset-four     { margin-left: 33.3333336%;}
+.col-offset-five     { margin-left: 41.666667%; }
+.col-offset-six      { margin-left: 50%;        }
+.col-offset-seven    { margin-left: 58.333333%; }
+.col-offset-eight    { margin-left: 66.666667%; }
+.col-offset-nine     { margin-left: 75%;        }
+.col-offset-ten      { margin-left: 83.333333%; }
+.col-offset-eleven   { margin-left: 91.666667%; }
+
+// Confine box to a specific size
+.max-wd-40 { max-width: 40rem; }
+.max-wd-45 { max-width: 45rem; }
+.max-wd-50 { max-width: 50rem; }
+.max-wd-55 { max-width: 55rem; }
+.max-wd-60 { max-width: 60rem; }
+.max-wd-65 { max-width: 65rem; }
+.max-wd-70 { max-width: 70rem; }
+.max-wd-75 { max-width: 75rem; }
+.max-wd-80 { max-width: 80rem; }
+.max-wd-85 { max-width: 85rem; }
+.max-wd-90 { max-width: 90rem; }
+.max-wd-95 { max-width: 95rem; }
+.max-wd-100 { max-width: 100rem; }
+.max-wd-105 { max-width: 105rem; }
+.max-wd-110 { max-width: 110rem; }
+.max-wd-115 { max-width: 115rem; }
+.max-wd-120 { max-width: 120rem; }
+
+// Media Queries
+@media screen and (min-width: 400px) {
+  @include centering(40);
+  @include grid(40);
+
+  .container {
+    max-width: 400px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  @include centering(50);
+  @include grid(50);
+
+  .container {
+    max-width: 500px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  @include centering(60);
+  @include grid(60);
+
+  .container {
+    max-width: 600px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  @include centering(70);
+  @include grid(70);
+
+  .container {
+    max-width: 700px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  @include centering(80);
+  @include grid(80);
+
+  .container {
+    max-width: 800px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  @include centering(90);
+  @include grid(90);
+
+  .container {
+    max-width: 900px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  @include centering(100);
+  @include grid(100);
+
+  .container {
+    max-width: 1000px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  @include centering(110);
+  @include grid(110);
+
+  .container {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  @include centering(120);
+  @include grid(120);
+}

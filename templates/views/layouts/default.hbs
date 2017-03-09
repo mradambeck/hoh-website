@@ -6,7 +6,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Houses of Heaven</title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-		<link href="/styles/site.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900|Old+Standard+TT" rel="stylesheet">
+		<link href="/styles/site.min.css" rel="stylesheet">
 
 		{{!-- This file provides the default styling for the KeystoneJS Content Editor
 			- only renders when user is logged in and admin--}}
@@ -21,7 +22,7 @@
 
 	</head>
 	<body>
-		<div id="header">
+		{{!-- <div id="header">
 			<div class="container">
 				<div role="navigation" class="navbar navbar-default">
 					<div class="container-fluid">
@@ -40,18 +41,11 @@
 									</li>
 								{{/each}}
 							</ul>
-							<ul class="nav navbar-nav navbar-right">
-								{{#if user}}
-								<li><a href="/keystone/signout">Sign Out</a></li>
-								{{else}}
-								<li><a href="/keystone/signin">Sign In</a></li>
-								{{/if}}
-							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 		<div id="body">
 			<!--
 				Flash messages allow you to display once-off status messages to users, e.g. form
@@ -86,7 +80,7 @@
 		</div>
 		<div class="container">
 			<div id="footer">
-				<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
+				{{!-- <p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p> --}}
 			</div>
 		</div>
 		{{!--
@@ -94,12 +88,12 @@
 			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
 			//- you can upgrade to 2.1.4 (also bundled) for better performance.
 		--}}
-		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
+		{{!-- <script src="/js/jquery/jquery-1.11.3.min.js"></script> --}}
 		{{!--
 			//- Customise which Bootstrap javascript files are served by including
 			//- them specifically here, instead of bootstrap-3.3.5.min.js
 		--}}
-		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
+		{{!-- <script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script> --}}
 		{{{isAdminEditorJS user}}}
 	</body>
 </html>

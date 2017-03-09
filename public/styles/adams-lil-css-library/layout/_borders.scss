@@ -1,0 +1,8 @@
+// Borders //
+
+// Border (in $hc-border-color)
+.border-all { border: 1px solid $hc-border-color;        }
+.border-t   { border-top: 1px solid $hc-border-color;    }
+.border-r   { border-left: 1px solid $hc-border-color;   }
+.border-b   { border-bottom: 1px solid $hc-border-color; }
+.border-l   { border-right: 1px solid $hc-border-color;  }

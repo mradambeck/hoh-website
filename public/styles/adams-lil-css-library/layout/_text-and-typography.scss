@@ -1,0 +1,37 @@
+// Text and typography //
+
+// Alignment
+.text-r { text-align: right;  }
+.text-l { text-align: left;   }
+.text-c { text-align: center; }
+
+// Transform
+.text-upcase     { text-transform: uppercase; }
+.text-lowercase  { text-transform: lowercase; }
+.text-capitalize { text-transform: capitalize; }
+
+// Font-sizing
+.font-xs { font-size: .9em;  }
+.font-sm { font-size: 1.1em; }
+.font-md { font-size: 1.4em; }
+.font-lg { font-size: 2.2em; }
+.font-xl { font-size: 3.6em; }
+
+// Weights
+.font-wt-b       { font-weight: bold; }
+.font-wt-normal  { font-weight: normal; }
+
+// Line Height
+.text-lheight-100 { line-height: 1; }
+.text-lheight-125 { line-height: 1.25; }
+.text-lheight-150 { line-height: 1.5; }
+
+// Super text
+
+.sup, sup {
+  vertical-align: top;
+  font-size: .575em;
+  position: relative;
+  bottom: .35em;
+  margin: 0 .03em 0 .05em;
+}
