@@ -1,4 +1,40 @@
 .module-shows {
   min-height: 100vh;
   background-color: $bg-dark-blue;
+  color: $white;
+  padding: 4em 0 4em;
+}
+
+.module-shows--container {
+  max-width: 120rem;
+}
+
+.module-shows--listings {
+  margin-top: 4em;
+  font-size: 1.4rem;
+  letter-spacing: .2em;
+}
+
+.module-shows--single-listing {
+  margin-top: 2.5em;
+}
+
+.module-shows--date, .module-shows--title {
+  font-weight: 900;
+}
+
+@media screen and (min-width: 600px){
+  .module-shows {
+    padding: 18vh 0 18vh;
+  }
+
+  .module-shows--single-listing {
+    margin-top: 1.5em;
+  }
+}
+
+@media screen and (min-width: 1100px){
+  .module-shows--title {
+    padding-left: 1.75em;
+  }
 }

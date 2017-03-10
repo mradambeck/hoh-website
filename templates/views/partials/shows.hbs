@@ -1,31 +1,41 @@
-<div class="container">
-	<h1>Shows</h1>
-</div>
-<div class="container">
-	<!-- if galleries -->
-	{{#if shows}}
-
-		{{#each shows}}
-    <hr />
-		<div class="row">
-				<div class="col-xs-4">
-          {{dateFormat eventDate "M.DD.YYYY h:mm A"}}
-				</div>
-        <div class="col-xs-4">
-          {{title}}
-        </div>
-        <div class="col-xs-4">
-          {{venue}} - {{location}}
-        </div>
-		</div>
-		{{/each}}
-	{{else}}
-	<!-- else -->
-	<h3 class="text-muted">There are no shows currently announced.</h3>
-
-	{{/if}}
-</div>
-
 <div class="wrapper module-shows">
+  <div class="container module-shows--container">
+    {{!-- <div> --}}
+    <div class="row">
+      <div class="col-twelve">
+        <h2 class="section-title text-c">Live</h2>
+      </div>
+    </div>
+    {{!-- </div> --}}
+    {{#if shows}}
+      <div class="module-shows--listings">
+  		{{#each shows}}
 
+    		<div class="row module-shows--single-listing">
+
+    				<div class="col-twelve col-two-60 col-two-90 col-one-110 module-shows--date">
+              {{dateFormat eventDate "MM.DD.YY"}}
+    				</div>
+
+            <div class="col-twelve col-ten-60 col-five-90 col-six-110 module-shows--title">
+              {{title}}
+            </div>
+
+            <div class="col-twelve col-ten-60 col-offset-two-60 col-two-90 col-offset-one-90 module-shows--venue">
+              {{venue}}
+            </div>
+
+            <div class="col-twelve col-ten-60 col-offset-two-60 col-two-90 col-offset-zero-90 module-shows--location">
+              {{location}}
+            </div>
+    		</div>
+
+  		{{/each}}
+      </div>
+  	{{else}}
+  	<!-- else -->
+  	<h3 class="text-muted">There are no shows currently announced.</h3>
+
+  	{{/if}}
+  </div>
 </div>

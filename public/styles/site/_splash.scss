@@ -8,10 +8,10 @@
   -o-background-size: contain;
   background-size: contain;
 
+  height: 100vh;
 }
 
 .module-splash--container {
-  height: 100vh;
 }
 
 .module-splash--title {
@@ -19,4 +19,6 @@
   height: auto;
   width: 80%;
   max-width: 60rem;
+  position: relative;
+  left: .3rem;
 }

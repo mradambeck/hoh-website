@@ -9,3 +9,4 @@ Website for my band, Houses of Heaven.
 - Node
 - Sass
 - MongoDB
+- Compass (to compile appropriate sass)
