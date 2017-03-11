@@ -1613,7 +1613,11 @@ input {
   clip: auto; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #1c2b2c; }
+
+a:hover, a:active {
+  color: #a28265; }
 
 .bg-white {
   background-color: #fff; }
@@ -1622,7 +1626,7 @@ a {
   background-color: #1c2b2c; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Arapey", serif;
+  font-family: "Old Standard TT", serif;
   font-weight: normal; }
 
 h1, h2 {
@@ -1646,10 +1650,67 @@ h2::after {
   margin: auto;
   background: #fff;
   height: 1px;
-  width: 24rem; }
+  width: 30rem; }
 
-#header {
-  margin-top: 30px; }
+#navbar {
+  position: fixed;
+  top: 0;
+  background: white;
+  height: 5rem;
+  width: 100%;
+  border-bottom: 1px solid #ededed;
+  z-index: 999999;
+  transition: background 300ms ease, border-bottom 300ms ease; }
+
+#navbar.transparent {
+  border-bottom: 0;
+  transition: border-bottom 300ms ease; }
+
+#navbar .container, #navbar .container-fluid {
+  max-width: 140rem; }
+
+.navbar--helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle; }
+
+.navbar--links {
+  text-align: right;
+  font-family: "Old Standard TT", serif;
+  font-size: 1.5rem;
+  letter-spacing: .4em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  color: #1c2b2c;
+  transition: color 300ms ease; }
+
+#navbar.transparent,
+.transparent a {
+  color: #fff;
+  background: transparent;
+  transition: color 300ms ease, background 300ms ease; }
+
+.navbar--logo {
+  vertical-align: middle;
+  height: auto;
+  max-width: 23rem;
+  position: relative;
+  top: -.2rem;
+  opacity: 1;
+  transition: visibility 300ms ease, opacity 300ms ease; }
+
+.transparent .navbar--logo {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 300ms ease, opacity 300ms ease; }
+
+.navbar--list-item {
+  display: inline-block;
+  list-style: none;
+  margin: 0 1.2em; }
+
+.navbar--links a:last-child > .navbar--list-item {
+  margin-right: 0; }
 
 #footer {
   margin-top: 30px;
@@ -1679,10 +1740,9 @@ body {
   left: .3rem; }
 
 .module-shows {
-  min-height: 100vh;
   background-color: #1c2b2c;
   color: #fff;
-  padding: 4em 0 4em; }
+  padding: 4em 0 10em; }
 
 .module-shows--container {
   max-width: 120rem; }
@@ -1700,7 +1760,7 @@ body {
 
 @media screen and (min-width: 600px) {
   .module-shows {
-    padding: 18vh 0 18vh; }
+    padding: 10em 0 18em; }
   .module-shows--single-listing {
     margin-top: 1.5em; } }
 

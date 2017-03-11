@@ -1,6 +1,75 @@
-#header {
-	margin-top: 30px;
+#navbar {
+	position: fixed;
+  top: 0;
+  background: white;
+  height: 5rem;
+  width: 100%;
+  border-bottom: 1px solid #ededed;
+  z-index: 999999;
+  transition: background 300ms ease, border-bottom 300ms ease;
 }
+
+#navbar.transparent {
+  border-bottom: 0;
+  transition: border-bottom 300ms ease;
+}
+
+#navbar .container {
+  max-width: 140rem;
+}
+
+.navbar--helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.navbar--links {
+  text-align: right;
+  font-family: $serif-font-stack;
+  font-size: 1.5rem;
+  letter-spacing: .4em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  color: $bg-dark-blue;
+  transition: color 300ms ease;
+}
+
+#navbar.transparent,
+.transparent a {
+  color: $white;
+  background: transparent;
+
+  transition: color 300ms ease, background 300ms ease;
+}
+
+.navbar--logo {
+  vertical-align: middle;
+  height: auto;
+  max-width: 23rem;
+  position: relative;
+  top: -.2rem;
+  opacity: 1;
+  transition: visibility 300ms ease, opacity 300ms ease;
+}
+
+.transparent .navbar--logo {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 300ms ease, opacity 300ms ease;
+}
+
+.navbar--list-item {
+  display: inline-block;
+  list-style: none;
+  margin: 0 1.2em;
+}
+
+.navbar--links a:last-child > .navbar--list-item {
+  margin-right: 0;
+}
+
+
 
 #footer {
 	margin-top: 30px;

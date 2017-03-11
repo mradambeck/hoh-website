@@ -1,8 +1,8 @@
 .module-shows {
-  min-height: 100vh;
+  // min-height: 100vh;
   background-color: $bg-dark-blue;
   color: $white;
-  padding: 4em 0 4em;
+  padding: 4em 0 10em;
 }
 
 .module-shows--container {
@@ -25,7 +25,7 @@
 
 @media screen and (min-width: 600px){
   .module-shows {
-    padding: 18vh 0 18vh;
+    padding: 10em 0 18em;
   }
 
   .module-shows--single-listing {
