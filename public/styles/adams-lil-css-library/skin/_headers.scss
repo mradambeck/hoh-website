@@ -8,7 +8,7 @@ h1, h2 {
 }
 
 h2 {
-  font-size: 8.4rem;
+  font-size: 5rem;
   letter-spacing: .3em;
   width: auto;
   margin: 0 auto;
@@ -26,5 +26,17 @@ h2::after{
   margin: auto;
   background: currentColor;
   height: 1px;
-  width: 30rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 600px){
+
+  h2 {
+    font-size: 8.4rem;
+  }
+
+  h2::after{
+    width: 30rem;
+  }
+
 }

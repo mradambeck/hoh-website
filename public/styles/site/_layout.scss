@@ -80,4 +80,7 @@
 
 body {
   font-family: $sans-font-stack;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }

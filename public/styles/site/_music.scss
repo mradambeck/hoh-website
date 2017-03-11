@@ -8,13 +8,15 @@
   // margin: auto;
 }
 
-.module-music h2::after{
-  width: 39rem;
-}
+
 
 @media screen and (min-width: 600px){
   .module-music {
     padding: 10em 0 9em;
+  }
+
+  .module-music h2::after{
+    width: 39rem;
   }
 
 }

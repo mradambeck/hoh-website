@@ -3,14 +3,16 @@
 
   background-image: url('../images/ep-art@2x.jpg');
   background-repeat: no-repeat;
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  background-size: contain;
+  -webkit-background-size: 200% auto;
+  -moz-background-size: 200% auto;
+  -o-background-size: 200% auto;
+  background-size: 200% auto;
 
   opacity: 0;
   height: 100vh;
   transform: translateY(-30px);
+
+  overflow: hidden;
 }
 
 .module-splash.active {
@@ -40,3 +42,12 @@
 //   opacity: 1;
 //   transition: opacity 2.5s ease;
 // }
+
+@media screen and (min-width: 600px) {
+  .module-splash {
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+  }
+}
