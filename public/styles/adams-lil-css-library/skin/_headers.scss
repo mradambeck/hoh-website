@@ -1,0 +1,30 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: $serif-font-stack;
+  font-weight: normal;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 8.4rem;
+  letter-spacing: .3em;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  left: .15em;
+}
+
+h2::after{
+  content: "";
+  position: absolute;
+  left: -.15em;
+  bottom: .25em;
+  right: .15em;
+  margin: auto;
+  background: currentColor;
+  height: 1px;
+  width: 30rem;
+}

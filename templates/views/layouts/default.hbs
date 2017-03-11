@@ -7,7 +7,7 @@
 		<title>Houses of Heaven</title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,900|Old+Standard+TT" rel="stylesheet">
-		<link href="/styles/site.min.css" rel="stylesheet">
+		<link href="/styles/site.css" rel="stylesheet">
 
 		{{!-- This file provides the default styling for the KeystoneJS Content Editor
 			- only renders when user is logged in and admin--}}
@@ -22,30 +22,24 @@
 
 	</head>
 	<body>
-		{{!-- <div id="header">
+		<div id="navbar" class="transparent">
 			<div class="container">
-				<div role="navigation" class="navbar navbar-default">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-							</button>
-							<a href="/" class="navbar-brand">Houses of Heaven</a>
-						</div>
-						<div class="collapse navbar-collapse">
-							<ul class="nav navbar-nav navbar-left">
-									{{# each navLinks}}
-									<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
-										<a href="{{ href }}">{{ label }}</a>
-									</li>
-								{{/each}}
-							</ul>
-						</div>
-					</div>
-				</div>
+        <div class="row">
+          <div class="col-three">
+            <span class="navbar--helper"></span><img src="/images/hoh-logo.svg" class="navbar--logo" alt="Houses of Heaven logo">
+          </div>
+          <div class="col-nine">
+            <ul class="navbar--links">
+              <a href="#live"><li class="navbar--list-item">Live</li></a>
+              <a href="#music"><li class="navbar--list-item">Music</li></a>
+              <a href="#news"><li class="navbar--list-item">News</li></a>
+              <a href="#bio"><li class="navbar--list-item">Bio</li></a>
+            </li>
+            </ul>
+          </div>
+        </div>
 			</div>
-		</div> --}}
+		</div>
 		<div id="body">
 			<!--
 				Flash messages allow you to display once-off status messages to users, e.g. form
@@ -95,5 +89,7 @@
 		--}}
 		{{!-- <script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script> --}}
 		{{!-- {{{isAdminEditorJS user}}} --}}
+    <script src="/js/modules/header.js"></script>
+    <script src="/js/modules/splash.js"></script>
 	</body>
 </html>
