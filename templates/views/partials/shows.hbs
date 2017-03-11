@@ -11,6 +11,12 @@
       <div class="module-shows--listings">
   		{{#each shows}}
 
+        {{#if ticketLink}}
+          <a href={{ticketLink}} target="_blank" rel="nofollow noopener" title="Purchase tickets">
+        {{else if socialLink}}
+          <a href={{socialLink}} target="_blank" rel="nofollow noopener" title="More details">
+        {{/if}}
+
     		<div class="row module-shows--single-listing">
 
     				<div class="col-twelve col-two-60 col-two-90 col-one-110 module-shows--date">
@@ -30,11 +36,15 @@
             </div>
     		</div>
 
+        {{#if ticketLink}}</a>{{else if socialLink}}</a>{{/if}}
+
   		{{/each}}
       </div>
   	{{else}}
   	<!-- else -->
-  	<h3 class="text-muted">There are no shows currently announced.</h3>
+    <div class="col-twelve text-c module-shows--empty">
+    	<p>There are no shows currently announced.</p>
+    </div>
 
   	{{/if}}
   </div>

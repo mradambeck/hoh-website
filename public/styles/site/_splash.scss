@@ -8,11 +8,17 @@
   -o-background-size: contain;
   background-size: contain;
 
+  opacity: 0;
   height: 100vh;
+  transform: translateY(-30px);
 }
 
-.module-splash--container {
+.module-splash.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 2.25s ease, transform 1.5s ease-out;
 }
+
 
 .module-splash--title {
   margin-top: 80vh;
@@ -21,4 +27,16 @@
   max-width: 60rem;
   position: relative;
   left: .3rem;
+  transform: translateY(-40px);
+  // opacity: 0;
 }
+
+.active .module-splash--title {
+  transform: translateY(0);
+  transition: transform 1.5s ease-out;
+}
+
+// .module-splash--title.active {
+//   opacity: 1;
+//   transition: opacity 2.5s ease;
+// }

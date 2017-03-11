@@ -4,9 +4,6 @@
 ////////////
 
 var HEADER = (function () {
-
-  var HDR = {};
-
   var navbar = document.getElementById('navbar');
   var navHeight = window.getComputedStyle(navbar, null).getPropertyValue("height").split('px')[0];
   navHeight = parseInt(navHeight);
@@ -25,7 +22,5 @@ var HEADER = (function () {
       navbar.classList.add('transparent');
     }
   }
-
-  return HDR;
 
 })();

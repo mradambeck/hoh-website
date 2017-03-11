@@ -1,8 +1,18 @@
 .module-shows {
   // min-height: 100vh;
   background-color: $bg-dark-blue;
-  color: $white;
   padding: 4em 0 10em;
+}
+
+.module-shows,
+.module-shows a {
+  color: $white;
+  transition: color 200ms ease;
+}
+
+.module-shows a:hover {
+  color: $gold;
+  transition: color 200ms ease;
 }
 
 .module-shows--container {
@@ -21,6 +31,13 @@
 
 .module-shows--date, .module-shows--title {
   font-weight: 900;
+}
+
+.module-shows--empty {
+  padding-top: 1em;
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: .2em;
 }
 
 @media screen and (min-width: 600px){
