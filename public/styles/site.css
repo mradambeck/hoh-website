@@ -1981,7 +1981,7 @@ body {
   margin-bottom: 4.5em; }
 
 .module-post--image {
-  margin: auto; }
+  margin: 0 auto 3em; }
 
 .module-post--article {
-  margin-bottom: 8em; }
+  margin-bottom: 5em; }
