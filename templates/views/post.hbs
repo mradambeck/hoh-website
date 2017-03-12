@@ -16,13 +16,13 @@
               <img src="{{{cloudinaryUrl data.post.image width=750 height=450 crop='fit' }}}" class="img-fluid module-post--image">
             </div>
             <div class="col-twelve col-seven-80 col-offset-one-80 col-six-100 col-offset-one-100 ">
-              <div class="module-post--date">{{{dateFormat data.post.publishedDate "MM.DD.YY"}}}</div>
+              <div class="module-post--date">Posted {{{dateFormat data.post.publishedDate "MM.DD.YY"}}}</div>
               {{{data.post.content.extended}}}
             </div>
 
           {{else}}
             <div class="col-ten col-offset-one">
-              <div class="module-post--date">{{{dateFormat data.post.publishedDate "MM.DD.YY"}}}</div>
+              <div class="module-post--date">Posted {{{dateFormat data.post.publishedDate "MM.DD.YY"}}}</div>
               {{{data.post.content.extended}}}
             </div>
           {{/if}}
