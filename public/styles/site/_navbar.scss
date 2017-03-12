@@ -18,6 +18,40 @@
   max-width: 140rem;
 }
 
+.navbar--social-icon {
+  display: inline;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-top: -8px;
+  position: relative;
+  top: .3rem;
+  fill: $bg-dark-blue;
+  transition: fill 300ms ease;
+}
+
+.navbar--social-icon:hover {
+  fill: $gold;
+  transition: fill 300ms ease;
+}
+
+.transparent .navbar--social-icon {
+  fill: $white;
+  transition: fill 300ms ease;
+}
+
+.transparent .navbar--social-icon:hover {
+  fill: darken($white, 10);
+  transition: fill 300ms ease;
+}
+
+.navbar--social-icon-wrapper {
+  margin-left: .5em;
+}
+
+.navbar--social-icon-wrapper:first-of-type {
+  margin-left: 0;
+}
+
 .navbar--helper {
     display: inline-block;
     height: 100%;
@@ -56,6 +90,7 @@
   top: -.2rem;
   opacity: 1;
   transition: visibility 300ms ease, opacity 300ms ease;
+  width: 0;
 }
 
 .transparent .navbar--logo {
@@ -72,4 +107,10 @@
 
 .navbar--links a:last-child > .navbar--list-item {
   margin-right: 0;
+}
+
+@media screen and (min-width: 700px) {
+  .navbar--logo {
+    width: auto;
+  }
 }
