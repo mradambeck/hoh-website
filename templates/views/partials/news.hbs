@@ -1,52 +1,85 @@
 <div id="news" class="scrollable-point"></div>
 <section class="wrapper module-news">
-  <div class="container">
+  <div class="container module-news--container">
+    {{!-- <div> --}}
     <div class="row">
-      <div class="col-twelve text-c">
-        <h2>News</h2>
+      <div class="col-twelve">
+        <h2 class="section-title text-c">News</h2>
       </div>
     </div>
-  <div class="row">
-      <ul class="module-news--posts">
-        <div class="module-news--posts-wrapper">
-          {{#each data.posts.results}}
-            <li class="col-twelve col-six-70 col-four-90">
-              <div class="row">
-                <div class="col-twelve">
-                  <h3 class="module-news--post-title">
-                    <a href="{{postUrl slug}}">{{{title}}}</a>
-                  </h3>
-                </div>
-              </div>
+    {{!-- </div> --}}
+    {{#if data.posts.results}}
+    <div class="module-news--posts">
+      {{#each data.posts.results}}
 
-    					{{#if image.url}}
-                <div class="row">
-                  <div class="col-twelve col-six-70">
-                    <img src="{{{cloudinaryUrl image width=300 height=300 crop='fit' }}}" class="module-news--image" style="width: 100%; height: auto;">
-                  </div>
-                  <div class="col-twelve col-six-70">
-                    <div class="module-news--text-content">
-                      {{{content.brief}}}
-            					{{#if content.extended}}<p class="read-more"><a href="{{postUrl slug}}">Read more...</a></p>{{/if}}
-                    </div>
-                  </div>
-                </div>
-              {{else}}
-                <div class="row">
-                  <div class="col-twelve module-news--no-image">
-                    <div class="module-news--text-content">
-                      {{{content.brief}}}
-                      {{#if content.extended}}<p class="read-more"><a href="{{postUrl slug}}">Read more...</a></p>{{/if}}
-                    </div>
-                  </div>
-                </div>
-              {{/if}}
+      <a href={{postUrl slug}} target="_blank" rel="nofollow noopener" title={{title}}>
 
-            </li>
-          {{/each}}
+        <div class="row module-news--single-post">
+
+          <div class="col-twelve col-two-60 module-news--date">
+            {{dateFormat publishedDate "MM.DD.YY"}}
+          </div>
+
+          <div class="col-twelve col-ten-60 module-news--content">
+            <span class="module-news--content-title">{{title}}:</span> <span class="module-news--content-brief">{{content.brief}}</span>
+          </div>
         </div>
-      </ul>
+
+      </a>
+
+      {{/each}}
+    </div>
+    {{else}}
+    <!-- else -->
+    <div class="col-twelve text-c module-news--empty">
+      <p>There are no news items currently published.</p>
     </div>
 
+    {{/if}}
   </div>
 </section>
+
+
+
+{{!-- <div id="news" class="scrollable-point"></div>
+<section class="wrapper module-news">
+<div class="container">
+<div class="row">
+<div class="col-twelve text-c">
+<h2>News</h2>
+</div>
+</div>
+<div class="row">
+{{#if data.posts.results}}
+{{#each data.posts.results}}
+
+<div class="col-twelve">
+<a href="{{postUrl slug}}" class="module-news--post">
+
+<div class="module-news--post-title">
+{{{title}}}
+</div>
+
+<div class="module-news--post-content">
+{{{content.brief}}}
+</div>
+
+{{#if content.extended}}
+<div class="module-news--post-link">
+Read more...
+</div>
+{{/if}}
+</a>
+</div>
+
+{{/each}}
+{{else}}
+
+<div class="col-twelve text-c module-news--empty">
+<p>There are no news items currently published.</p>
+</div>
+{{/if}}
+</div>
+
+</div>
+</section> --}}
