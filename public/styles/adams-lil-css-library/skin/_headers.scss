@@ -3,7 +3,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-h1, h2 {
+h1, h2, h3 {
   text-transform: uppercase;
 }
 
@@ -17,7 +17,7 @@ h2 {
   left: .15em;
 }
 
-h2::after{
+h2::after, h3::after, h4::after{
   content: "";
   position: absolute;
   left: -.15em;
@@ -29,6 +29,25 @@ h2::after{
   width: 100%;
 }
 
+h3 {
+  font-size: 3rem;
+  letter-spacing: .3em;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  left: .15em;
+}
+
+h3::after {
+  width: 100vw;
+}
+
+h4::after {
+  bottom: 4em;
+  width: 15rem;
+}
+
 @media screen and (min-width: 600px){
 
   h2 {
@@ -37,6 +56,14 @@ h2::after{
 
   h2::after{
     width: 30rem;
+  }
+
+  h3 {
+    font-size: 4rem;
+  }
+
+  h4 {
+    font-size: 1.8rem;
   }
 
 }

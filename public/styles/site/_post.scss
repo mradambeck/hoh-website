@@ -1,0 +1,27 @@
+
+.module-post {
+  padding: 8rem 0 5rem;
+  background: $white; //fallback
+  background-color: $white; //fallback
+  background-image: -webkit-linear-gradient(top, $white, $white);
+  background-image:    -moz-linear-gradient(top, $white, $white);
+  background-image:      -o-linear-gradient(top, $white, $white);
+  background-image:         linear-gradient(to bottom, $white, $white);
+}
+
+.module-post--date {
+  font-weight: 900;
+  letter-spacing: .2em;
+}
+
+.module-post--title {
+  margin-bottom: 4.5em;
+}
+
+.module-post--image {
+  margin: auto;
+}
+
+.module-post--article {
+  margin-bottom: 8em;
+}

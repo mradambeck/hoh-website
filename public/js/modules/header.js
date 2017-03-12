@@ -23,10 +23,7 @@ var HEADER = (function () {
   }
 
   if (path === "/"){
-
     window.onscroll = getScrollPosition;
-
-
   } else {
     navbar.classList.remove('transparent');
   }
