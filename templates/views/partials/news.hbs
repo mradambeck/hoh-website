@@ -12,7 +12,7 @@
     <div class="module-news--posts">
       {{#each data.posts.results}}
 
-      <a href={{postUrl slug}} target="_blank" rel="nofollow noopener" title={{title}}>
+      <a href={{postUrl slug}} title={{title}}>
 
         <div class="row module-news--single-post">
 
@@ -38,48 +38,3 @@
     {{/if}}
   </div>
 </section>
-
-
-
-{{!-- <div id="news" class="scrollable-point"></div>
-<section class="wrapper module-news">
-<div class="container">
-<div class="row">
-<div class="col-twelve text-c">
-<h2>News</h2>
-</div>
-</div>
-<div class="row">
-{{#if data.posts.results}}
-{{#each data.posts.results}}
-
-<div class="col-twelve">
-<a href="{{postUrl slug}}" class="module-news--post">
-
-<div class="module-news--post-title">
-{{{title}}}
-</div>
-
-<div class="module-news--post-content">
-{{{content.brief}}}
-</div>
-
-{{#if content.extended}}
-<div class="module-news--post-link">
-Read more...
-</div>
-{{/if}}
-</a>
-</div>
-
-{{/each}}
-{{else}}
-
-<div class="col-twelve text-c module-news--empty">
-<p>There are no news items currently published.</p>
-</div>
-{{/if}}
-</div>
-
-</div>
-</section> --}}

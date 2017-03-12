@@ -154,6 +154,8 @@ module.exports = function () {
 		return rtn;
 	};
 
+
+
 	// ### CloudinaryUrl Helper
 	// Direct support of the cloudinary.url method from Handlebars (see
 	// cloudinary package documentation for more details).
@@ -328,6 +330,19 @@ module.exports = function () {
 	_helpers.underscoreFormat = function (obj, underscoreMethod) {
 		return obj._[underscoreMethod].format();
 	};
+
+  // checks if something is something
+  _helpers.is = function(a, b, options) {
+    if (arguments.length === 2) {
+      options = b;
+      b = options.hash.compare;
+    }
+    if (a === b) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  };
+
 
 	return _helpers;
 };
