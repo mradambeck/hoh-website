@@ -1,0 +1,53 @@
+.module-bio {
+  background-color: $bg-dark-blue;
+  color: $white;
+}
+
+.module-bio--photo {
+  background-color: $bg-white;
+
+  background-image: url('../images/promo-photo.jpg');
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  background-position: center;
+  min-height: 60rem;
+}
+
+.module-bio--title {
+  max-width: 85%;
+  margin-bottom: 5rem;
+}
+
+.module-bio--text {
+  padding: 4em 3.5em 5em;
+}
+
+.module-bio--text p {
+  letter-spacing: .075em;
+  line-height: 1.6em;
+}
+
+.module-bio--text a {
+  color: $light-gold;
+  transition: color 300ms ease;
+}
+
+.module-bio--text a:hover {
+  color: $gold;
+  transition: color 300ms ease;
+}
+
+@media screen and (min-width: 600px){
+  .module-bio--text {
+    padding: 10em 3.5em 9em;
+  }
+
+  .module-music h2::after{
+    width: 60rem;
+  }
+
+}

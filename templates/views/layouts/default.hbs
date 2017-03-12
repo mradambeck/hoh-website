@@ -22,24 +22,8 @@
 
 	</head>
 	<body>
-		<div id="navbar" class="transparent">
-			<div class="container">
-        <div class="row">
-          <div class="col-three">
-            <span class="navbar--helper"></span><img src="/images/hoh-logo.svg" class="navbar--logo" alt="Houses of Heaven logo">
-          </div>
-          <div class="col-nine">
-            <ul class="navbar--links">
-              <a href="#live"><li class="navbar--list-item">Live</li></a>
-              <a href="#music"><li class="navbar--list-item">Music</li></a>
-              <a href="#news"><li class="navbar--list-item">News</li></a>
-              <a href="#bio"><li class="navbar--list-item">Bio</li></a>
-            </li>
-            </ul>
-          </div>
-        </div>
-			</div>
-		</div>
+
+    {{> navbar }}
 		<div id="body">
 			<!--
 				Flash messages allow you to display once-off status messages to users, e.g. form
@@ -70,13 +54,13 @@
 			</div>
 			{{/if}}
 			<!-- The content block should contain the body of your template's content-->
-      
+
 			{{{body}}}
 		</div>
 		<div class="container">
-			<div id="footer">
+			{{!-- <div id="footer"> --}}
 				{{!-- <p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p> --}}
-			</div>
+			{{!-- </div> --}}
 		</div>
 		{{!--
 			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
@@ -91,6 +75,7 @@
 		{{!-- <script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script> --}}
 		{{!-- {{{isAdminEditorJS user}}} --}}
     <script src="/js/modules/header.js"></script>
+    <script src="/js/modules/zenscroll-min.js"></script>
     <script src="/js/modules/splash.js"></script>
 	</body>
 </html>

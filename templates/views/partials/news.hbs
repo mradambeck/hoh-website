@@ -1,0 +1,52 @@
+<div id="news" class="scrollable-point"></div>
+<section class="wrapper module-news">
+  <div class="container">
+    <div class="row">
+      <div class="col-twelve text-c">
+        <h2>News</h2>
+      </div>
+    </div>
+  <div class="row">
+      <ul class="module-news--posts">
+        <div class="module-news--posts-wrapper">
+          {{#each data.posts.results}}
+            <li class="col-twelve col-six-70 col-four-90">
+              <div class="row">
+                <div class="col-twelve">
+                  <h3 class="module-news--post-title">
+                    <a href="{{postUrl slug}}">{{{title}}}</a>
+                  </h3>
+                </div>
+              </div>
+
+    					{{#if image.url}}
+                <div class="row">
+                  <div class="col-twelve col-six-70">
+                    <img src="{{{cloudinaryUrl image width=300 height=300 crop='fit' }}}" class="module-news--image" style="width: 100%; height: auto;">
+                  </div>
+                  <div class="col-twelve col-six-70">
+                    <div class="module-news--text-content">
+                      {{{content.brief}}}
+            					{{#if content.extended}}<p class="read-more"><a href="{{postUrl slug}}">Read more...</a></p>{{/if}}
+                    </div>
+                  </div>
+                </div>
+              {{else}}
+                <div class="row">
+                  <div class="col-twelve module-news--no-image">
+                    <div class="module-news--text-content">
+                      {{{content.brief}}}
+                      {{#if content.extended}}<p class="read-more"><a href="{{postUrl slug}}">Read more...</a></p>{{/if}}
+                    </div>
+                  </div>
+                </div>
+              {{/if}}
+
+            </li>
+          {{/each}}
+        </div>
+      </ul>
+    </div>
+
+  </div>
+</section>

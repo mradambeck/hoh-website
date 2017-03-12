@@ -1,5 +1,11 @@
 .module-music {
   padding: 4em 0 5em;
+  background: $light-gold; //fallback
+  background-color: $light-gold; //fallback
+  background-image: -webkit-linear-gradient(top, $light-gold, $bg-white);
+  background-image:    -moz-linear-gradient(top, $light-gold, $bg-white);
+  background-image:      -o-linear-gradient(top, $light-gold, $bg-white);
+  background-image:         linear-gradient(to bottom, $light-gold, $bg-white);
 }
 
 .module-music--iframe-container {

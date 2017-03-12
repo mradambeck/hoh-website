@@ -15,6 +15,10 @@
   transition: color 200ms ease;
 }
 
+.module-shows h2::after {
+  width: 87.5%
+}
+
 .module-shows--container {
   max-width: 120rem;
 }
@@ -43,6 +47,10 @@
 @media screen and (min-width: 600px){
   .module-shows {
     padding: 10em 0 18em;
+  }
+
+  .module-shows h2::after {
+    width: 30rem;
   }
 
   .module-shows--single-listing {
