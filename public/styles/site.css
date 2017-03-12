@@ -1631,7 +1631,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Old Standard TT", serif;
   font-weight: normal; }
 
-h1, h2 {
+h1, h2, h3 {
   text-transform: uppercase; }
 
 h2 {
@@ -1643,7 +1643,7 @@ h2 {
   position: relative;
   left: .15em; }
 
-h2::after {
+h2::after, h3::after, h4::after {
   content: "";
   position: absolute;
   left: -.15em;
@@ -1654,11 +1654,31 @@ h2::after {
   height: 1px;
   width: 100%; }
 
+h3 {
+  font-size: 3rem;
+  letter-spacing: .3em;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  left: .15em; }
+
+h3::after {
+  width: 100vw; }
+
+h4::after {
+  bottom: 4em;
+  width: 15rem; }
+
 @media screen and (min-width: 600px) {
   h2 {
     font-size: 8.4rem; }
   h2::after {
-    width: 30rem; } }
+    width: 30rem; }
+  h3 {
+    font-size: 4rem; }
+  h4 {
+    font-size: 1.8rem; } }
 
 #footer {
   margin-top: 30px;
@@ -1943,3 +1963,25 @@ body {
     padding: 5em 0 15em; }
   .module-news h2::after {
     width: 39rem; } }
+
+.module-post {
+  padding: 8rem 0 5rem;
+  background: #fff;
+  background-color: #fff;
+  background-image: -webkit-linear-gradient(top, #fff, #fff);
+  background-image: -moz-linear-gradient(top, #fff, #fff);
+  background-image: -o-linear-gradient(top, #fff, #fff);
+  background-image: linear-gradient(to bottom, #fff, #fff); }
+
+.module-post--title {
+  margin-bottom: 4.5em; }
+
+.module-post--image {
+  margin: auto; }
+
+.module-post--article {
+  margin-bottom: 8em; }
+
+@media screen and (min-width: 800px) {
+  .module-post--image {
+    margin: 0; } }
