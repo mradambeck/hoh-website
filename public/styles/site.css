@@ -1915,9 +1915,7 @@ body {
 
 @media screen and (min-width: 600px) {
   .module-bio--text {
-    padding: 10em 3.5em 9em; }
-  .module-music h2::after {
-    width: 60rem; } }
+    padding: 10em 3.5em 9em; } }
 
 .module-news {
   padding: 2em 0 10em; }
