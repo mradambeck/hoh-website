@@ -4,7 +4,7 @@
 ////////////////
 
 var RELOCATE = (function(){
-  // relocates user to has location on reload
+  // relocates user to hash location on reload
   var hashish = window.location.hash;
   if (!!hashish){
     var target = document.querySelector(hashish);
