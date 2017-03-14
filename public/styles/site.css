@@ -1884,7 +1884,7 @@ body {
 
 .module-splash {
   background-color: #fff;
-  background-image: url("../images/ep-art@2x.jpg");
+  background-image: url("../images/ep-art-optimized.jpg");
   background-repeat: no-repeat;
   -webkit-background-size: 200% auto;
   -moz-background-size: 200% auto;
@@ -1993,7 +1993,12 @@ body {
 
 .module-bio--photo {
   background-color: #fff;
-  background-image: url("../images/promo-photo.jpg");
+  background-image: url("../images/promo-photo-optimized.jpg");
+  background-image: image-set(url("../images/promo-photo-optimized.jpg") 1x, url("../images/promo-photo@2x-optimized.jpg") 2x);
+  background-image: -webkit-image-set(url("../images/promo-photo-optimized.jpg") 1x, url("../images/promo-photo@2x-optimized.jpg") 2x);
+  background-image: -moz-image-set(url("../images/promo-photo-optimized.jpg") 1x, url("../images/promo-photo@2x-optimized.jpg") 2x);
+  background-image: -o-image-set(url("../images/promo-photo-optimized.jpg") 1x, url("../images/promo-photo@2x-optimized.jpg") 2x);
+  background-image: -ms-image-set(url("../images/promo-photo-optimized.jpg") 1x, url("../images/promo-photo@2x-optimized.jpg") 2x);
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
