@@ -6,6 +6,8 @@ exports = module.exports = function (req, res) {
 
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
+  var tomorrow = new Date();
+      tomorrow = tomorrow.setDate(tomorrow.getDate() + 1);
 
   locals.section = 'home';
 
@@ -17,7 +19,7 @@ exports = module.exports = function (req, res) {
   // Load UPCOMING SHOWS by sortOrder
   view.query('shows', keystone.list('Show').model.find()
                               .where('state', 'published')
-                              .where('eventDate').gt(Date.now())
+                              .where('eventDate').gt(tomorrow)
                               .sort('eventDate'));
 
 	// Load the posts

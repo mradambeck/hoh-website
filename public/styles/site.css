@@ -402,76 +402,6 @@ input {
   height: auto;
   max-width: 100%; }
 
-.bg-cover {
-  background-size: cover; }
-
-.bg-contain {
-  background-size: contain; }
-
-.hide,
-.display-n {
-  display: none; }
-
-.show,
-.display-b {
-  display: block; }
-
-.display-i,
-.display-i > li {
-  display: inline; }
-
-.display-ib {
-  display: inline-block; }
-
-.display-it {
-  display: inline-table; }
-
-.display-t {
-  display: table; }
-
-.display-tc {
-  display: table-cell; }
-
-.display-t-row {
-  display: table-row; }
-
-.display-t-row-group {
-  display: table-row-group; }
-
-.display-t-column {
-  display: table-column; }
-
-.display-t-column-group {
-  display: table-column-group; }
-
-.display-t-fixed {
-  table-layout: fixed;
-  width: 100%; }
-
-.visibility-h {
-  visibility: hidden; }
-
-.visibility-v {
-  visibility: visible; }
-
-.HV-overflow-v {
-  overflow: visible; }
-
-.overflow-h {
-  overflow: hidden; }
-
-.overflow-s {
-  overflow: scroll; }
-
-.overflow-a {
-  overflow: auto; }
-
-.text-r {
-  text-align: right; }
-
-.text-l {
-  text-align: left; }
-
 .text-c {
   text-align: center; }
 
@@ -483,36 +413,6 @@ input {
 
 .text-capitalize {
   text-transform: capitalize; }
-
-.font-xs {
-  font-size: .9em; }
-
-.font-sm {
-  font-size: 1.1em; }
-
-.font-md {
-  font-size: 1.4em; }
-
-.font-lg {
-  font-size: 2.2em; }
-
-.font-xl {
-  font-size: 3.6em; }
-
-.font-wt-b {
-  font-weight: bold; }
-
-.font-wt-normal {
-  font-weight: normal; }
-
-.text-lheight-100 {
-  line-height: 1; }
-
-.text-lheight-125 {
-  line-height: 1.25; }
-
-.text-lheight-150 {
-  line-height: 1.5; }
 
 .sup, sup {
   vertical-align: top;
@@ -1566,21 +1466,6 @@ input {
     margin-left: 83.333333%; }
   .col-offset-eleven-120 {
     margin-left: 91.666667%; } }
-
-.border-all {
-  border: 1px solid #fff; }
-
-.border-t {
-  border-top: 1px solid #fff; }
-
-.border-r {
-  border-left: 1px solid #fff; }
-
-.border-b {
-  border-bottom: 1px solid #fff; }
-
-.border-l {
-  border-right: 1px solid #fff; }
 
 .no-select {
   -webkit-touch-callout: none;
