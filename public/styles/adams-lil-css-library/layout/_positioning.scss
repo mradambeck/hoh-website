@@ -7,17 +7,6 @@
   display: block;
 }
 
-// Position and block model
-.position-s  { position: static; }
-.position-r  { position: relative; }
-.position-a  { position: absolute; }
-.position-f  { position: fixed;    }
-
-.top-0       { top: 0;     }
-.right-0     { right: 0;   }
-.bottom-0    { bottom: 0;  }
-.left-0      { left: 0;    }
-
 // Floats
 .float-l { float: left;  }
 .float-r { float: right; }
