@@ -1715,10 +1715,11 @@ body {
   position: absolute;
   width: 18.8rem;
   top: 1.25rem;
-  left: 25%;
-  margin: auto;
   opacity: 1;
-  transition: opacity 300ms ease; }
+  transition: opacity 300ms ease;
+  margin: 0 auto;
+  left: 0;
+  right: 0; }
 
 .transparent .navbar--mobile-logo {
   opacity: 0; }
