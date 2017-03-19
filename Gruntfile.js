@@ -8,6 +8,9 @@ module.exports = function (grunt) {
 	// Time how long tasks take. Can help when optimizing build times
 	require('time-grunt')(grunt);
 
+  // run browserify to use module syntax in JS:
+  grunt.loadNpmTasks('grunt-browserify');
+
 	var options = {
 		config: {
 			src: './grunt/*.js',
@@ -21,6 +24,20 @@ module.exports = function (grunt) {
 				},
 			},
 		},
+
+    browserify: {
+      all: {
+        files: {
+          'public/js/bundle.js': ['public/js/index.js']
+        },
+        options: {
+          watch: true,
+          browserifyOptions: {
+            debug: true
+          }
+        }
+      }
+    }
 	};
 
 	var configs = require('load-grunt-configs')(grunt, options);
@@ -29,7 +46,7 @@ module.exports = function (grunt) {
 	grunt.initConfig(configs);
 
 
-	grunt.registerTask('dev', ['sass', 'watch']);
+	grunt.registerTask('dev', ['sass', 'browserify', 'watch']);
 
 
 	// default option to connect server
