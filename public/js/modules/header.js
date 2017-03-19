@@ -13,6 +13,7 @@ var HEADER = (function(){
       menuToggle = document.getElementById('navbar--toggle--js'),
       navLinks = document.getElementsByClassName('navbar--site-link'),
       overlay = document.getElementById('navbar--overlay'),
+      mobileLogo = document.getElementById('navbar--mob-logo-js'),
       closeables = [];
 
       navHeight = parseInt(navHeight);
@@ -41,6 +42,7 @@ var HEADER = (function(){
   function toggleMobileMenu() {
     mobileNav.classList.contains('active')? (mobileNav.classList.remove('active')) : (mobileNav.classList.add('active'));
     overlay.classList.contains('active')? (overlay.classList.remove('active')) : (overlay.classList.add('active'));
+    mobileLogo.classList.contains('active')? (mobileLogo.classList.remove('active')) : (mobileLogo.classList.add('active'));
 
     if (window.pageYOffset < 50){
       navbar.classList.contains('transparent')? (navbar.classList.remove('transparent')) : (navbar.classList.add('transparent'));
