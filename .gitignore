@@ -31,3 +31,7 @@ node_modules
 .DS_Store
 
 .sass-cache
+
+server.csr
+server.key
+server.pass.key
