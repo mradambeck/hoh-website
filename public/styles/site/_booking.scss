@@ -1,4 +1,39 @@
+.module-booking {
+  padding: 7em 0 5em;
+  background: $light-gold; //fallback
+  background-color: $light-gold; //fallback
+  background-image: -webkit-linear-gradient(top, $light-gold, $bg-white);
+  background-image:    -moz-linear-gradient(top, $light-gold, $bg-white);
+  background-image:      -o-linear-gradient(top, $light-gold, $bg-white);
+  background-image:         linear-gradient(to bottom, $light-gold, $bg-white);
+}
+
+.booking--input-list ol h4,
+.booking--input-list ul h4 {
+  margin: 3rem -2rem .75rem;
+}
+
+.module-booking h3::after {
+  width: 100%;
+}
+
+
+h4.booking--ol-header {
+  text-transform: uppercase;
+  letter-spacing: .125em;
+}
+
 h4.booking--ol-header::after {
   height: 0;
-  width:0;
+  width: 0;
+}
+
+.booking--heading {
+  margin-bottom: 4rem;
+}
+
+@media screen and (min-width: 900px){
+  .module-booking--column {
+    padding: 0 1.5rem;
+  }
 }
