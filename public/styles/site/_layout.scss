@@ -18,3 +18,9 @@ body {
   position: relative;
   top: -4.1rem;
 }
+
+@media screen and (min-width: 500px){
+  br.mobile-break {
+    display: none;
+  }
+}

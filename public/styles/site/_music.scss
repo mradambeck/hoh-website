@@ -14,7 +14,13 @@
   // margin: auto;
 }
 
-
+.module-music--no-music-text {
+  text-align: center;
+  padding-top: 4em;
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: .2em;
+}
 
 @media screen and (min-width: 600px){
   .module-music {
