@@ -34,18 +34,22 @@ var routes = {
 
 function setHeaders(res, path, stat){
   var file = path.split('.'),
-      ext = file[file.length-1];
+      ext;
+
+  if ( file[file.length-1].indexOf('?') > -1 ){
+    ext = file[file.length-1].split('?')[0];
+  } else {
+    ext = file[file.length-1];
+  }
 
   // cache lengths (in seconds)
   var imageTime   = '604800'; // 1 week
-  var cssHtmlTime = '86400';  // 24 hours
+  var cssTime = '172800';  // 2 days
 
   if ( ext === 'jpg' || ext === 'svg' || ext === 'png' || ext === 'webp' || ext === 'ico' || ext === 'gif' ){
     res.setHeader( 'Cache-Control', 'max-age='+ imageTime );
-
-  // uncomment to cache css/html - leaving off while still doing a lot of development:
-  // } else if ( ext === 'css' || ext === 'html' ) {
-  //   res.setHeader( 'Cache-Control', 'max-age='+ cssHtmlTime );
+  } else if ( ext === 'css' ) {
+    res.setHeader( 'Cache-Control', 'max-age='+ cssTime );
   }
   // in keystone not specifying otherwise will default to max-age of 0;
 }

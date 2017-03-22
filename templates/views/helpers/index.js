@@ -343,6 +343,19 @@ module.exports = function () {
     return options.inverse(this);
   };
 
+  // timestamp css
+  _helpers.timestamp = function(styleSheet){
+    var fs = require('fs'),
+        path = require("path");
+
+    var stats = fs.statSync(path.join(__dirname, '..', '..', '..', ('public/styles/' + styleSheet))),
+        mtime = new Date(stats.mtime);
+
+    var mnth = mtime.getMonth(), day  = mtime.getDate(), year = mtime.getFullYear(), hours = mtime.getHours(), mins = mtime.getMinutes();
+
+    var date = year + '-' + mnth + '-' + day + '-' + hours + '-' + mins;
+    return date;
+  };
 
 	return _helpers;
 };
