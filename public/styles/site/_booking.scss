@@ -1,11 +1,11 @@
 .module-booking {
-  padding: 7em 0 5em;
+  padding: 7em 0 10em;
   background: $light-gold; //fallback
   background-color: $light-gold; //fallback
-  background-image: -webkit-linear-gradient(top, $light-gold, $bg-white);
-  background-image:    -moz-linear-gradient(top, $light-gold, $bg-white);
-  background-image:      -o-linear-gradient(top, $light-gold, $bg-white);
-  background-image:         linear-gradient(to bottom, $light-gold, $bg-white);
+  background-image: -webkit-linear-gradient(top, $bg-white, $light-gold);
+  background-image:    -moz-linear-gradient(top, $bg-white, $light-gold);
+  background-image:      -o-linear-gradient(top, $bg-white, $light-gold);
+  background-image:         linear-gradient(to bottom, $bg-white, $light-gold);
 }
 
 .booking--input-list ol h4,

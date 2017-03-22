@@ -1980,13 +1980,13 @@ body {
   margin-bottom: 5em; }
 
 .module-booking {
-  padding: 7em 0 5em;
+  padding: 7em 0 10em;
   background: #d8c8b1;
   background-color: #d8c8b1;
-  background-image: -webkit-linear-gradient(top, #d8c8b1, #fff);
-  background-image: -moz-linear-gradient(top, #d8c8b1, #fff);
-  background-image: -o-linear-gradient(top, #d8c8b1, #fff);
-  background-image: linear-gradient(to bottom, #d8c8b1, #fff); }
+  background-image: -webkit-linear-gradient(top, #fff, #d8c8b1);
+  background-image: -moz-linear-gradient(top, #fff, #d8c8b1);
+  background-image: -o-linear-gradient(top, #fff, #d8c8b1);
+  background-image: linear-gradient(to bottom, #fff, #d8c8b1); }
 
 .booking--input-list ol h4,
 .booking--input-list ul h4 {
