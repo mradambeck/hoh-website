@@ -8,6 +8,10 @@
   background-image:         linear-gradient(to bottom, $bg-white, $light-gold);
 }
 
+.module-booking--column {
+  margin-bottom: 8rem;
+}
+
 .booking--input-list ol h4,
 .booking--input-list ul h4 {
   margin: 3rem -2rem .75rem;
@@ -30,6 +34,22 @@ h4.booking--ol-header::after {
 
 .booking--heading {
   margin-bottom: 4rem;
+}
+
+.module-booking--promo-photo {
+  width: 100%;
+  height: auto;
+  margin: 2rem auto 1rem;
+}
+
+.module-booking--bio,
+.module-booking--contact {
+  padding: 0 3rem;
+}
+
+.module-booking--promo-download {
+  font-weight: bold;
+  text-align: center;
 }
 
 @media screen and (min-width: 900px){

@@ -21,6 +21,7 @@
 var keystone = require('keystone');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
+var robots = require('express-robots');
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
@@ -69,5 +70,7 @@ exports = module.exports = function (app) {
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
+
+  app.use(robots(__dirname + '/../robots.txt'));
 
 };
