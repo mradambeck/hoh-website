@@ -7,6 +7,7 @@
     "cloudinary": "^1.2.4",
     "dotenv": "^2.0.0",
     "express-handlebars": "^3.0.0",
+    "express-robots": "^0.1.6",
     "handlebars": "^4.0.5",
     "handlebars-dateformat": "^1.0.1",
     "keystone": "^0.3.19",
@@ -37,6 +38,6 @@
     "lint": "eslint .",
     "start": "node keystone.js",
     "development": "sass --watch ./public/styles/. & node keystone.js",
-    "gruntdev": "grunt concurrent"
+    "serve": "grunt concurrent"
   }
 }

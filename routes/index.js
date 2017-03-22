@@ -21,6 +21,7 @@
 var keystone = require('keystone');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
+var robots = require('express-robots');
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
@@ -31,17 +32,45 @@ var routes = {
 	views: importRoutes('./views'),
 };
 
+function setHeaders(res, path, stat){
+  var file = path.split('.'),
+      ext = file[file.length-1];
+
+  // cache lengths (in seconds)
+  var imageTime   = '604800'; // 1 week
+  var cssHtmlTime = '86400';  // 24 hours
+
+  if ( ext === 'jpg' || ext === 'svg' || ext === 'png' || ext === 'webp' || ext === 'ico' || ext === 'gif' ){
+    res.setHeader( 'Cache-Control', 'max-age='+ imageTime );
+
+  // uncomment to cache css/html - leaving off while still doing a lot of development:
+  // } else if ( ext === 'css' || ext === 'html' ) {
+  //   res.setHeader( 'Cache-Control', 'max-age='+ cssHtmlTime );
+  }
+  // in keystone not specifying otherwise will default to max-age of 0;
+}
+
+if (!process.env.LOCALHOST){ // don't set cache on localhost bc that's annoying.
+  keystone.set('static options', {
+    'setHeaders': setHeaders
+  });
+}
+
+
 // Setup Route Bindings
 exports = module.exports = function (app) {
 	// Views
 	app.get('/', routes.views.index);
 	// app.get('/blog/:category?', routes.views.blog);
 	app.get('/news/:post', routes.views.post);
+  app.get('/booking', routes.views.booking);
 	// app.get('/gallery', routes.views.gallery);
   // app.get('/shows', routes.views.shows);
 	// app.all('/contact', routes.views.contact);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
+
+  app.use(robots(__dirname + '/../robots.txt'));
 
 };
