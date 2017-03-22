@@ -1884,6 +1884,9 @@ body {
   background-color: #1c2b2c;
   color: #fff; }
 
+.test-class {
+  border: 1px dotted red; }
+
 .module-bio--photo {
   background-color: #fff;
   background-image: url("../images/promo-photo-optimized.jpg");

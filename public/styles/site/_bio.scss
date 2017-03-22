@@ -1,10 +1,15 @@
 .scrollable-point.bio {
   top: -9.6rem;
+
 }
 
 .module-bio {
   background-color: $bg-dark-blue;
   color: $white;
+}
+
+.test-class {
+  border: 1px dotted red;
 }
 
 .module-bio--photo {
