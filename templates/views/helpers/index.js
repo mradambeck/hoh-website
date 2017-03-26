@@ -357,5 +357,23 @@ module.exports = function () {
     return date;
   };
 
+  // localhost checker
+  _helpers.isLocal = function(options) {
+    if(process.env.LOCALHOST) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  };
+
+  //prod checker
+  _helpers.isProd = function(options) {
+    if(!process.env.LOCALHOST) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  };
+
 	return _helpers;
 };
