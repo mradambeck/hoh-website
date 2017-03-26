@@ -10,37 +10,38 @@
     {{!-- </div> --}}
     {{#if shows}}
       <div class="module-shows--listings">
-  		{{#each shows}}
+    		{{#each shows}}
+          <span itemscope itemtype="http://schema.org/Event">
+            {{#if ticketLink}}
+              <a itemprop="url" content={{ticketLink}} href={{ticketLink}} target="_blank" rel="nofollow noopener" title="Purchase tickets">
+            {{else if socialLink}}
+              <a itemprop="url" content={{socialLink}} href={{socialLink}} target="_blank" rel="nofollow noopener" title="More details">
+            {{/if}}
 
-        {{#if ticketLink}}
-          <a itemprop="url" content={{ticketLink}} href={{ticketLink}} target="_blank" rel="nofollow noopener" title="Purchase tickets">
-        {{else if socialLink}}
-          <a itemprop="url" content={{socialLink}} href={{socialLink}} target="_blank" rel="nofollow noopener" title="More details">
-        {{/if}}
+        		<div class="row module-shows--single-listing">
 
-    		<div itemscope itemtype="http://schema.org/Event" class="row module-shows--single-listing">
+      				<div itemprop="startDate" content={{dateFormat eventDate "Y-MM-DD"}} class="col-twelve col-two-60 col-two-90 col-one-110 module-shows--date">
+                {{dateFormat eventDate "MM.DD.YY"}}
+      				</div>
 
-  				<div itemprop="startDate" content={{dateFormat eventDate "Y-MM-DD"}} class="col-twelve col-two-60 col-two-90 col-one-110 module-shows--date">
-            {{dateFormat eventDate "MM.DD.YY"}}
-  				</div>
+              <div itemprop="name" class="col-twelve col-ten-60 col-five-90 col-six-110 module-shows--title">
+                {{title}}
+              </div>
 
-          <div itemprop="name" class="col-twelve col-ten-60 col-five-90 col-six-110 module-shows--title">
-            {{title}}
-          </div>
+              <div itemprop="location" itemscope itemtype="http://schema.org/Place" class="col-twelve col-ten-60 col-offset-two-60 col-two-90 col-offset-one-90 module-shows--venue">
+                <span itemprop="name">{{venue}}</span>
+                <span itemprop="streetAddress" content={{streetAddress}}></span>
+                <span itemprop="addressLocality" content={{location}}></span>
+              </div>
 
-          <div itemprop="location" itemscope itemtype="http://schema.org/Place" class="col-twelve col-ten-60 col-offset-two-60 col-two-90 col-offset-one-90 module-shows--venue">
-            <span itemprop="name">{{venue}}</span>
-          </div>
+              <div class="col-twelve col-ten-60 col-offset-two-60 col-two-90 col-offset-zero-90 module-shows--location">
+                {{location}}
+              </div>
+        		</div>
 
-          <div itemprop="location" itemscope itemtype="http://schema.org/PostalAddress" class="col-twelve col-ten-60 col-offset-two-60 col-two-90 col-offset-zero-90 module-shows--location">
-            <span itemprop="addressLocality">{{location}}</span>
-            <span itemprop="streetAddress" content="665 Street st"></span>
-          </div>
-    		</div>
-
-        {{#if ticketLink}}</a>{{else if socialLink}}</a>{{/if}}
-
-  		{{/each}}
+            {{#if ticketLink}}</a>{{else if socialLink}}</a>{{/if}}
+          </span>
+    		{{/each}}
       </div>
   	{{else}}
   	<!-- else -->
