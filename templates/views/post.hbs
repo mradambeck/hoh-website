@@ -2,10 +2,10 @@
 <section class="wrapper module-post">
   <div class="container module-post--container">
 
-  		<article class="module-post--article">
+  		<article itemscope itemtype="http://schema.org/Article" class="module-post--article">
   			<header class="row module-post--title">
           <div class="col-twelve">
-    				<h3 class="text-c">{{data.post.title}}</h3>
+    				<h3 itemprop="name" class="text-c">{{data.post.title}}</h3>
           </div>
   			</header>
 
@@ -13,11 +13,11 @@
 
   				{{#if data.post.image.url}}
             <div class="col-twelve col-four-80 col-five-100">
-              <img src="{{{cloudinaryUrl data.post.image width=750 height=450 crop='fit' }}}" class="img-fluid module-post--image">
+              <img itemprop="image" src="{{{cloudinaryUrl data.post.image width=750 height=450 crop='fit' }}}" class="img-fluid module-post--image">
             </div>
             <div class="col-twelve col-seven-80 col-offset-one-80 col-six-100 col-offset-one-100 ">
-              <div class="module-post--date">Posted {{{dateFormat data.post.publishedDate "MM.DD.YY"}}}</div>
-              {{{data.post.content.extended}}}
+              <div class="module-post--date">Posted <span itemprop="datePublished" content={{dateFormat data.post.publishedDate "Y-MM-DD"}}>{{{dateFormat data.post.publishedDate "MM.DD.YY"}}}</span></div>
+              <span itemprop="articleBody">{{{data.post.content.extended}}}</span>
             </div>
 
           {{else}}
