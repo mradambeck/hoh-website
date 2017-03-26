@@ -344,11 +344,11 @@ module.exports = function () {
   };
 
   // timestamp css
-  _helpers.timestamp = function(styleSheet){
+  _helpers.timestamp = function(filepath){
     var fs = require('fs'),
         path = require("path");
 
-    var stats = fs.statSync(path.join(__dirname, '..', '..', '..', ('public/styles/' + styleSheet))),
+    var stats = fs.statSync(path.join(__dirname, '..', '..', '..', ('public' + filepath))),
         mtime = new Date(stats.mtime);
 
     var mnth = mtime.getMonth(), day  = mtime.getDate(), year = mtime.getFullYear(), hours = mtime.getHours(), mins = mtime.getMinutes();

@@ -44,12 +44,15 @@ function setHeaders(res, path, stat){
 
   // cache lengths (in seconds)
   var imageTime   = '604800'; // 1 week
-  var cssTime = '172800';  // 2 days
+  var cssTime     = '172800'; // 2 days
+  var jsTime      = '172800'; // 2 days
 
   if ( ext === 'jpg' || ext === 'svg' || ext === 'png' || ext === 'webp' || ext === 'ico' || ext === 'gif' ){
     res.setHeader( 'Cache-Control', 'max-age='+ imageTime );
   } else if ( ext === 'css' ) {
     res.setHeader( 'Cache-Control', 'max-age='+ cssTime );
+  } else if ( ext === 'js' ) {
+    res.setHeader( 'Cache-Control', 'max-age='+ jsTime );
   }
   // in keystone not specifying otherwise will default to max-age of 0;
 }
