@@ -20,25 +20,22 @@
 
     		<div itemscope itemtype="http://schema.org/Event" class="row module-shows--single-listing">
 
-    				<div itemprop="startDate" content={{dateFormat eventDate "Y-MM-DD"}} class="col-twelve col-two-60 col-two-90 col-one-110 module-shows--date">
-              {{dateFormat eventDate "MM.DD.YY"}}
-    				</div>
+  				<div itemprop="startDate" content={{dateFormat eventDate "Y-MM-DD"}} class="col-twelve col-two-60 col-two-90 col-one-110 module-shows--date">
+            {{dateFormat eventDate "MM.DD.YY"}}
+  				</div>
 
-            <div itemprop="name" class="col-twelve col-ten-60 col-five-90 col-six-110 module-shows--title">
-              {{title}}
-            </div>
+          <div itemprop="name" class="col-twelve col-ten-60 col-five-90 col-six-110 module-shows--title">
+            {{title}}
+          </div>
 
-            <span itemprop="location" itemscope itemtype="http://schema.org/Place">
-              <div itemprop="name" class="col-twelve col-ten-60 col-offset-two-60 col-two-90 col-offset-one-90 module-shows--venue">
-                {{venue}}
-              </div>
 
-              <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                <div itemprop="addressLocality" class="col-twelve col-ten-60 col-offset-two-60 col-two-90 col-offset-zero-90 module-shows--location">
-                  {{location}}
-                </div>
-              </span>
-            </span>
+          <div itemprop="location" itemscope itemtype="http://schema.org/Place" class="col-twelve col-ten-60 col-offset-two-60 col-two-90 col-offset-one-90 module-shows--venue">
+            <span itemprop="name">{{venue}}</span>
+          </div>
+
+          <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="col-twelve col-ten-60 col-offset-two-60 col-two-90 col-offset-zero-90 module-shows--location">
+            <span itemprop="addressLocality">{{location}}</span>
+          </div>
     		</div>
 
         {{#if ticketLink}}</a>{{else if socialLink}}</a>{{/if}}
