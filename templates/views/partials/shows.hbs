@@ -54,3 +54,35 @@
   	{{/if}}
   </div>
 </section>
+
+
+{{#if shows}}
+  <script type="application/ld+json">
+    [
+      {{#each shows}}
+      {
+        "@context": "http://schema.org",
+        "@type": "MusicEvent",
+        "name": "{{title}}",
+        "startDate": "{{dateFormat eventDate 'Y-MM-DD'}}",
+        "location": {
+          "@type": "Place",
+          "name": "{{venue}}",
+          "address": "{{location}}",
+        },
+        {{#if ticketLink}}
+          "offers": {
+             "@type": "Offer",
+             "url": "{{ticketLink}}"
+          }
+        {{else if socialLink}}
+          "offers": {
+             "@type": "Offer",
+             "url": "{{socialLink}}"
+          }
+        {{/if}}
+      }
+      {{/each}}
+    ]
+  </script>
+{{/if}}
