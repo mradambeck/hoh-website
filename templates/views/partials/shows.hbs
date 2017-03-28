@@ -11,16 +11,16 @@
     {{#if shows}}
       <div class="module-shows--listings">
     		{{#each shows}}
-          <span itemscope itemtype="http://schema.org/Event">
+          <span itemscope itemtype="http://schema.org/MusicEvent">
             {{#if ticketLink}}
-              <a itemprop="url" content={{ticketLink}} href={{ticketLink}} target="_blank" rel="nofollow noopener" title="Purchase tickets">
+              <a itemprop="url" content={{ticketLink}} href="{{ticketLink}}" target="_blank" rel="nofollow noopener" title="Purchase tickets">
             {{else if socialLink}}
-              <a itemprop="url" content={{socialLink}} href={{socialLink}} target="_blank" rel="nofollow noopener" title="More details">
+              <a itemprop="url" content={{socialLink}} href="{{socialLink}}" target="_blank" rel="nofollow noopener" title="More details">
             {{/if}}
 
         		<div class="row module-shows--single-listing">
 
-      				<div itemprop="startDate" content={{dateFormat eventDate "Y-MM-DD"}} class="col-twelve col-two-60 col-two-90 col-one-110 module-shows--date">
+      				<div itemprop="startDate" content="{{dateFormat eventDate 'Y-MM-DD'}}" class="col-twelve col-two-60 col-two-90 col-one-110 module-shows--date">
                 {{dateFormat eventDate "MM.DD.YY"}}
       				</div>
 
@@ -31,8 +31,8 @@
               <div itemprop="location" itemscope itemtype="http://schema.org/Place" class="col-twelve col-ten-60 col-offset-two-60 col-two-90 col-offset-one-90 module-shows--venue">
                 <span itemprop="name">{{venue}}</span>
                 <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                  <span itemprop="streetAddress" content={{streetAddress}}></span>
-                  <span itemprop="addressLocality" content={{location}}></span>
+                  {{#if streetAddress}}<span itemprop="streetAddress" content="{{streetAddress}}"></span>{{/if}}
+                  {{#if location}}<span itemprop="addressLocality" content="{{location}}"></span>{{/if}}
                 </span>
               </div>
 
@@ -42,6 +42,7 @@
         		</div>
 
             {{#if ticketLink}}</a>{{else if socialLink}}</a>{{/if}}
+
           </span>
     		{{/each}}
       </div>
@@ -54,35 +55,3 @@
   	{{/if}}
   </div>
 </section>
-
-
-{{#if shows}}
-  <script type="application/ld+json">
-    [
-      {{#each shows}}
-      {
-        "@context": "http://schema.org",
-        "@type": "MusicEvent",
-        "name": "{{title}}",
-        "startDate": "{{dateFormat eventDate 'Y-MM-DD'}}",
-        "location": {
-          "@type": "Place",
-          "name": "{{venue}}",
-          "address": "{{location}}",
-        },
-        {{#if ticketLink}}
-          "offers": {
-             "@type": "Offer",
-             "url": "{{ticketLink}}"
-          }
-        {{else if socialLink}}
-          "offers": {
-             "@type": "Offer",
-             "url": "{{socialLink}}"
-          }
-        {{/if}}
-      }
-      {{/each}}
-    ]
-  </script>
-{{/if}}

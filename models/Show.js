@@ -4,14 +4,16 @@ var keystone = require('keystone'),
 var Show = new keystone.List('Show', {
     autokey: { path: 'slug', from: 'eventDate venue location', unique: true },
     map: { name: 'title' },
-    defaultSort: 'eventDate'
+    defaultSort: '-eventDate'
 });
 
 Show.add({
     eventDate: { type: Types.Datetime, default: Date.now, index: true },
+
     venue: { type: String, required: true, default: "Yo Mama's House" },
     streetAddress: {type: String, default: "1234 Adam Street"},
     location: { type: String, required: true, default: "San Francisco, CA" },
+
     title: { type: String, required: true },
 
     ticketLink: String,
