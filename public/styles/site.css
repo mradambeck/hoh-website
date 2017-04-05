@@ -1624,6 +1624,9 @@ body {
   color: #e6e6e6;
   transition: color 300ms ease; }
 
+.navbar--logo-wrapper {
+  line-height: 3.25; }
+
 .navbar--logo {
   vertical-align: middle;
   height: auto;
