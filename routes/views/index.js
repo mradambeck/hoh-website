@@ -18,7 +18,7 @@ exports = module.exports = function (req, res) {
     posts: []
   };
 
-  // Load UPCOMING SHOWS by sortOrder
+  // Load UPCOMING SHOWS by date
   view.query('shows', keystone.list('Show').model.find()
                               .where('state', 'published')
                               .where('eventDate').gt(thisMorning)
