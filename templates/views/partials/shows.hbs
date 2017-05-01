@@ -64,7 +64,7 @@
     {
       "@context": "http://schema.org",
       "@type":"Event",
-      "name":"{{title}}"
+      "name":"{{title}}",
       "url": "{{#if ticketLink}}{{ticketLink}}{{else if socialLink}}{{socialLink}}{{/if}}",
       "startDate": "{{eventDate}}",
       "location":{
@@ -84,7 +84,7 @@
         "description":"{{content.extended}}"
       {{/if}}
     }
-    
+
   {{/each}}
 </script>
 {{/if}}
