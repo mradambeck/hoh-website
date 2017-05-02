@@ -24,6 +24,48 @@ exports = module.exports = function (req, res) {
                               .where('eventDate').gt(thisMorning)
                               .sort('eventDate'));
 
+  view.on('init', function(next){
+    var shows = keystone.list('Show').model.find()
+                  .where('state', 'published')
+                  .where('eventDate').gt(thisMorning)
+                  .sort('eventDate');
+    shows.exec(function (err, results){
+      locals.shows = results;
+
+      // for Google indexing:
+      locals.showJSON = results.map(function(show){
+        var showObj = {
+          name: show.title,
+          startDate: show.eventDate,
+          location:{
+            name:show.venue,
+            address:{
+              addressCountry:{
+                name:"US"
+              }
+            }
+          }
+        };
+
+        // because @ symbols break stuff:
+        showObj['@context'] = "http://schema.org";
+        showObj['@type'] = "MusicEvent";
+        showObj.location['@type'] = "Place";
+        showObj.location.address['@type'] = "PostalAddress";
+
+        if (show.ticketLink){ showObj.url = show.ticketLink; }
+        else if (show.socialLink){ showObj.url = show.socialLink; }
+
+        if (show.streetAddress){ showObj.location.address.streetAddress = show.streetAddress; }
+        if (show.location){ showObj.location.address.addressLocality = show.location; }
+
+        return JSON.stringify(showObj);
+      });
+
+      next(err);
+    });
+  });
+
 	// Load the posts
 	view.on('init', function (next) {
 

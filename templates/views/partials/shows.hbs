@@ -53,32 +53,8 @@
 
 {{#if shows}}
 <script type="application/ld+json">
-  {{#each shows}}
-
-    {
-      "@context": "http://schema.org",
-      "@type":"MusicEvent",
-      "name":"{{title}}",
-      "url": "{{#if ticketLink}}{{ticketLink}}{{else if socialLink}}{{socialLink}}{{/if}}",
-      "startDate": "{{eventDate}}",
-      "location":{
-        "@type":"Place",
-        "name":"{{venue}}",
-        "address":{
-          "@type":"PostalAddress",
-          {{#if streetAddress}}"streetAddress":"{{streetAddress}}",{{/if}}
-          {{#if location}}"addressLocality":"{{location}}",{{/if}}
-          "addressCountry":{
-            "name":"US"
-          }
-        }
-
-      }
-      {{#if content.extended}}
-        "description":"{{content.extended}}"
-      {{/if}}
-    }
-
+  {{#each showJSON}}
+    {{{this}}}
   {{/each}}
 </script>
 {{/if}}
