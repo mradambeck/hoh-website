@@ -58,6 +58,7 @@ exports = module.exports = function (req, res) {
 
         if (show.streetAddress){ showObj.location.address.streetAddress = show.streetAddress; }
         if (show.location){ showObj.location.address.addressLocality = show.location; }
+        if (show.content.extended){showObj.description = show.content.extended; }
 
         return JSON.stringify(showObj);
       });
