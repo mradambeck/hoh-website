@@ -1998,6 +1998,9 @@ body {
 .module-post--article {
   margin-bottom: 5em; }
 
+.module-post--article a {
+  font-weight: 600; }
+
 .module-booking {
   padding: 7em 0 10em;
   background: #d8c8b1;
