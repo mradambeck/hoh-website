@@ -10,11 +10,12 @@
     "express-robots": "^0.1.6",
     "handlebars": "^4.0.5",
     "handlebars-dateformat": "^1.0.1",
-    "keystone": "^0.3.19",
+    "keystone": "^4.0.0-beta.1",
     "lodash": "^4.13.1",
     "moment": "^2.10.6",
     "node-sass": "^3.3.2",
-    "node-sass-middleware": "^0.9.7"
+    "node-sass-middleware": "^0.9.7",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "eslint": "^2.12.0",

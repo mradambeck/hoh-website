@@ -56,8 +56,8 @@ keystone.set('routes', require('./routes'));
 keystone.set('cookie secret', process.env.COOKIE_SECRET);
 
 // Switch Keystone Email defaults to handlebars
-keystone.Email.defaults.templateExt = 'hbs';
-keystone.Email.defaults.templateEngine = require('handlebars');
+// keystone.Email.defaults.templateExt = 'hbs';
+// keystone.Email.defaults.templateEngine = require('handlebars');
 
 
 // Configure the navigation bar in Keystone's Admin UI
