@@ -30,6 +30,7 @@ exports = module.exports = function (req, res) {
       .sort('eventDate');
     shows.exec(function (err, results) {
       locals.shows = results;
+      console.log(results);
 
       // for Google indexing:
       locals.showJSON = results.map(function (show) {

@@ -1,13 +1,13 @@
 <div id="live" class="scrollable-point"></div>
 <section class="wrapper module-shows">
   <div class="container module-shows--container">
-    {{!-- <div> --}}
+
     <div class="row">
       <div class="col-twelve">
         <h2 class="section-title text-c">Live</h2>
       </div>
     </div>
-    {{!-- </div> --}}
+
     {{#if shows}}
       <div class="module-shows--listings">
     		{{#each shows}}
@@ -20,7 +20,7 @@
       		<div class="row module-shows--single-listing">
 
     				<div class="col-twelve col-two-60 col-two-90 col-one-110 module-shows--date">
-              {{dateFormat eventDate "MM.DD.YY"}}
+              {{dateFormat eventDate "MM.DD.YY" false}}
     				</div>
 
             <div itemprop="name" class="col-twelve col-ten-60 col-five-90 col-six-110 module-shows--title">
