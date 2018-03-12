@@ -9,12 +9,11 @@ var linkTemplate = _.template('<a href="<%= url %>"><%= text %></a>');
 var scriptTemplate = _.template('<script src="<%= src %>"></script>');
 var cssLinkTemplate = _.template('<link href="<%= href %>" rel="stylesheet">');
 
-hbs.registerHelper('dateFormat', require('handlebars-dateformat')); // register dateTime hbs helper
+hbs.registerHelper('dateFormat', require('handlebars-dateformat')); // register dateTime hbs helper - this is a piece of shit
 
 module.exports = function () {
 
   var _helpers = {};
-
 
   /**
   * Generic HBS Helpers

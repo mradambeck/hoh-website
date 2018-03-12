@@ -8,7 +8,7 @@ var Show = new keystone.List('Show', {
 });
 
 Show.add({
-  eventDate: { type: Types.Datetime, default: Date.now, index: true },
+  eventDate: { type: Types.Datetime, default: Date.now, index: true, utc: false },
 
   venue: { type: String, required: true, default: 'Yo Mama\'s House' },
   streetAddress: {type: String, default: '1234 Adam Street'},

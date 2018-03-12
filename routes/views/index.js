@@ -1,5 +1,6 @@
 var keystone = require('keystone');
 var async = require('async');
+var _ = require('underscore');
 
 
 exports = module.exports = function (req, res) {
@@ -18,10 +19,10 @@ exports = module.exports = function (req, res) {
   };
 
   // Load UPCOMING SHOWS by date
-  view.query('shows', keystone.list('Show').model.find()
-    .where('state', 'published')
-    .where('eventDate').gt(thisMorning)
-    .sort('eventDate'));
+  // view.query('shows', keystone.list('Show').model.find()
+  //   .where('state', 'published')
+  //   .where('eventDate').gt(thisMorning)
+  //   .sort('eventDate'));
 
   view.on('init', function (next) {
     var shows = keystone.list('Show').model.find()
@@ -29,8 +30,13 @@ exports = module.exports = function (req, res) {
       .where('eventDate').gt(thisMorning)
       .sort('eventDate');
     shows.exec(function (err, results) {
+
       locals.shows = results;
-      console.log(results);
+      for (var i = 0; i < locals.shows.length; i++) {
+        // console.log(locals.shows[i].eventDate);
+        locals.shows[i].formattedDate = locals.shows[i]._.eventDate.format('MM[.]DD[.]YY').toString();
+        // console.log(locals.shows[i].formattedDate);
+      }
 
       // for Google indexing:
       locals.showJSON = results.map(function (show) {
