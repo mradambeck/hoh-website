@@ -40,5 +40,11 @@
     "start": "node keystone.js",
     "development": "sass --watch ./public/styles/. & node keystone.js",
     "serve": "grunt concurrent"
+  },
+
+  "engines" : {
+    "node" : "6.9.1" 
+    }
   }
+
 }
